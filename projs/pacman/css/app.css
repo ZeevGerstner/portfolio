@@ -1,0 +1,63 @@
+body {
+  background-color: black;
+  color:white;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.formLine {
+  margin:10px;
+  padding:10px;
+  background-color: cornflowerblue;
+}
+
+h3 {
+  font-size: 70px;
+  margin-left: 300px;
+}
+
+h3 span {
+  color: blueviolet;
+}
+
+.board-container{
+  margin-left: 500px;
+  margin-top: 100px;
+}
+
+.end-game {
+  position: absolute;
+  display: none;
+  position: fixed;
+  width: 600px;
+  height: 300px;
+  top: 140px;
+  left: 450px;
+  font-size: 30px;
+  border: 2px solid yellowgreen;
+  text-align: center;
+
+}
+
+.score {
+  position: relative;
+  display: block;
+  /* text-align: center; */
+  color: black;
+  /* visibility: hidden; */
+  font-size: 90px;
+
+}
+
+.btn-restart {
+  border: 0;
+  margin-top: 10px;
+  color: rgb(39, 6, 100);
+  font-size: 30px;
+  cursor: pointer;
+}

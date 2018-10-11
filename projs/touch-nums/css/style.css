@@ -1,0 +1,106 @@
+.restart {
+    background-color: aqua;
+    border: 0;
+    color:darkslateblue;
+    font-size: 20px;
+    font-style: italic;
+    cursor: pointer;
+}
+.restart:hover {
+    font-size: 1rem;
+
+}
+
+.time {
+    background-color: cadetblue;
+    width: 150px; 
+    padding: 15px;
+    border: 0;
+    text-align: center;
+    margin-left: 50px;
+    display: inline-block;
+    color:darkblue;
+}
+
+.next-num {
+    background-color: aqua;
+    width: 160px; 
+    padding: 15px;
+    border: 0;
+    text-align: center;
+    margin-left: 30px;
+    display: inline-block;
+    color:darkblue;
+}
+
+table {
+    border: 2px solid;
+    background-color: tomato;
+    border-collapse: collapse;
+    border-color: sandybrown;
+    color: slateblue;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+    font-size: 50px;
+    height: 400px;
+    width: 400px;
+    /* margin-top: 10px; */
+    margin-left: 50px; 
+}
+
+td,tr {
+    /* height: 80px;
+    width: 80px; */
+    border: 2px solid salmon;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: crimson;
+    color: cornflowerblue;
+    font-weight: bold;    
+}
+
+.difficulties {
+    display: inline;
+    border-radius: 10px;
+    cursor: pointer;
+    color:darkblue;
+    margin-left: 60px;
+}
+
+.difficulties button {
+    width: 100px;
+    height: 30px;
+    border:0; 
+    margin-left: 20px;
+    cursor: pointer;
+}
+.difficulties button:hover {
+    /* transition: .3s; */
+    font-style: italic;
+    font-weight: bold;    
+}
+
+ .easy { 
+    background-color: green;
+
+}
+
+.medium {
+    background-color: orange;
+}
+
+.hard {
+    background-color:red;
+}
+
+.best-time {
+    margin-left: 60px;
+    height: 20px;
+    width: 390px;
+    background-color: aliceblue;
+}

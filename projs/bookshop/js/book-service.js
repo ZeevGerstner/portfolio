@@ -24,11 +24,11 @@ function createBook(title, price, img) {
 function createBooks() {
     if (localStorage.books) gbooks = getFromStorage(BOOKS_KEY);
     else gBooks = [
-        createBook('Minds Game', '1', 'img/mind.png'),
+        createBook('The Spinoza Problem', '1', 'img/shpinozapb.jpeg'),
         createBook('Etics', '2', 'https://d188rgcu4zozwl.cloudfront.net/content/B01EMADYJM/resources/1533621840'),
-        createBook('Moby Dic', '16', 'https://d188rgcu4zozwl.cloudfront.net/content/B01EMADYJM/resources/1533621840'),
-        createBook('Minds Game', '32', 'img/mind.png'),
-        createBook('Etics', '3', 'https://d188rgcu4zozwl.cloudfront.net/content/B01EMADYJM/resources/1533621840'),
+        createBook('Moby Dick', '16', 'img/moby-dick.png'),
+        createBook('Philosophy Story','32', 'img/philosophy-story.jpeg'),
+        createBook('When Nietzsche wept', '3', 'img/nitshe.jpeg'),
         createBook('Moby Dic', '4', 'https://d188rgcu4zozwl.cloudfront.net/content/B01EMADYJM/resources/1533621840'),
         createBook('Minds Game', '5', 'img/mind.png'),
         createBook('Etics', '6', 'https://d188rgcu4zozwl.cloudfront.net/content/B01EMADYJM/resources/1533621840'),
