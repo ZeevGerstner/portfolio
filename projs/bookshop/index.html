@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book shop</title>
+    <link rel="stylesheet" href="lib/bs4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addBookModal" data-whatever="@mdo">Add
+                New Book</button>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+
+    <h1 class="text-center"> Book shop</h1>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Cover</th>
+                    <th scope="col" onclick="onClickFilter(this)">Title</th>
+                    <th scope="col" onclick="onClickFilter(this)">Price</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="books-list">
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-center">
+        <button type="button" class="btn btn-secondary active prev-page" onclick="onPrevPage()">
+            <span class="glyphicon glyphicon-menu-left">
+                <<</span> </button> </label> <button class="btn btn-secondary curr-page" href="#"> 0
+        </button>
+        <button class="btn btn-secondary next-page" onclick="onNextPage()"> >></button>
+    </div>
+
+    <div class="modal fade" id="addBookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBookModal">Add New Book</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="addBook-modal">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Enter Book Title</label>
+                            <input type="text" class="form-control " id="title-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Enter Book Price</label>
+                            <input type="text" class="form-control " id="price-input">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="readAndAddNewBook()">Add
+                        Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detailesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Book detailes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="detailes-modal"></div>
+
+                <div class="modal-footer">
+                    <div class="container text-center">
+                        <h6>Rate this Book</h6>
+                        <button type="button" class="btn btn-secondary btn-danger minus" onclick="onUpdateRate('-')">
+                            <span class="glyphicon glyphicon-minus">-</span>
+                        </button>
+                        <button class="btn btn-secondary curr-page rate"> </button>
+                        <button type="button" class="btn btn-secondary btn-success plus" onclick="onUpdateRate('+')">
+                            <span class="glyphicon glyphicon-plus">+</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="lib/jquery/jquery.js"></script>
+        <script src="lib/bs4/js/bootstrap.min.js"></script>
+        <script src="js/util-service.js"></script>
+        <script src="js/book-service.js"></script>
+        <script src="js/main.js"></script>
+</body>
+
+</html>

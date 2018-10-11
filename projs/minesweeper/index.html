@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+    <div class="container">
+
+        <div class="header">
+            <h2>Let's Mine</h2>
+            <div class="countFlags">2</div>
+            <button class="btn-restart" onclick="restart()">😃</button>
+            <div class="time">0</div>
+        </div>
+
+        <div class="high-score">Best time in this level: <span></span></div>
+
+        <div class="btn-container">
+            <button onclick="gameLevel(this,4,2,'Beginner')">Beginner</button>
+            <button onclick="gameLevel(this,6,5,'Medium')">Medium</button>
+            <button onclick="gameLevel(this,8,15,'Expert')">Expert</button>
+        </div>
+
+        <div class="toggel-game">READY TO MINE!</div>
+
+        <table>
+            <tbody class="board"></tbody>
+        </table>
+
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
