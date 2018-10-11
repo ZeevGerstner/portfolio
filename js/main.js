@@ -17,7 +17,7 @@ function renderProjs() {
                                             </div>
                                             </div>
                                             <div class="image-container">    
-                                                        <div class="img-fluid img-div" style="background-image: url('${proj.img}') ">
+                                                        <div class="img-fluid img-div" style="background-image: url(img/portfolio/${proj.img})">
                                                         </div>    
                                                 </div>
                                             </a>
@@ -29,21 +29,21 @@ function renderProjs() {
     })
     $('.myprojs').html(strHtmls.join(''))
 }
-                                    // <img class="img-fluid" src="${proj.img}" alt="" >
 
 function onClickProj(projId) {
     var projs = getProjs();
     var proj = getItembyId(projs, projId);
     console.log('in');
-    
+
     $('.modal-body').html(`
                                              <h2>${proj.name}</h2>
                                             <p class="item-intro text-muted">${proj.title}</p>
                                             <p>${proj.desc}</p>
-                                            <img class="img-fluid d-block mx-auto" src="${proj.modalImg}" alt="" >
+                                            <img class="img-fluid d-block mx-auto" src="img/portfolio/${proj.modalImg}" alt="" >
                                             <ul class="list-inline">
-                                              <li>Date: January 2017</li>
+                                              <li>Date: ${proj.publishedAt}</li>
                                               <li>Category: ${proj.labels.join(', ')}</li>
+                                            <a href="./projs/${proj.id}/index.html" target="_blank">${proj.name} link</a>
                                             </ul>
                                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                                 <i class="fa fa-times"></i>
@@ -51,20 +51,26 @@ function onClickProj(projId) {
     )
 }
 
-function onSubmitMessage(){
+function onSubmitMessage() {
     var $email = $('#email-adress');
     var $subject = $('#subject-area');
     var $message = $('#message-area');
-    console.log($message.val(),$email.val(),$subject.val());
+    console.log($message.val(), $email.val(), $subject.val());
     var url = `https://mail.google.com/mail/?view=cm&fs=1&to=zeev.gerstner@gmail.com&su=${$subject.val()}&b
     ody=${$message.val()}`;
-    
-    if(!$email.val()) return;
-    window.open(url,'_blank');
+
+    if (!$email.val()) return;
+    window.open(url, '_blank');
 
     $email.val('');
     $subject.val('');
     $message.val('');
+    $('.offcanvas-btn').removeClass('offcanvas-btn-open');
+    $('.offcanvas-aside').removeClass('offcanvas-aside-open');
+
+}
+
+function onClosecontect(){
     $('.offcanvas-btn').removeClass('offcanvas-btn-open');
     $('.offcanvas-aside').removeClass('offcanvas-aside-open');
 

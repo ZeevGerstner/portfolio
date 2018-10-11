@@ -38,3 +38,12 @@ function sortByTxt(a, b) {
 function sortByNum(a, b) {
     return a.price - b.price;
 }
+
+function getDate() {
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+
+    return `${day}/${month + 1}/${year}`
+}
