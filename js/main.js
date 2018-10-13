@@ -8,7 +8,6 @@ function initPage() {
 function renderProjs() {
     var projs = getProjs();
     var strHtmls = projs.map(function (proj) {
-        console.log(proj.img);
         return strHtmls = `<div class="col-md-4 col-sm-6 portfolio-item">
                                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1" onclick="onClickProj('${proj.id}')">
                                             <div class="portfolio-hover"  >
@@ -33,8 +32,6 @@ function renderProjs() {
 function onClickProj(projId) {
     var projs = getProjs();
     var proj = getItembyId(projs, projId);
-    console.log('in');
-
     $('.modal-body').html(`
                                              <h2>${proj.name}</h2>
                                             <p class="item-intro text-muted">${proj.title}</p>
@@ -55,7 +52,6 @@ function onSubmitMessage() {
     var $email = $('#email-adress');
     var $subject = $('#subject-area');
     var $message = $('#message-area');
-    console.log($message.val(), $email.val(), $subject.val());
     var url = `https://mail.google.com/mail/?view=cm&fs=1&to=zeev.gerstner@gmail.com&su=${$subject.val()}&b
     ody=${$message.val()}`;
 
@@ -75,3 +71,23 @@ function onClosecontect(){
     $('.offcanvas-aside').removeClass('offcanvas-aside-open');
 
 }
+
+// function openCanvas() {
+//     console.log('open');
+//     $('.offcanvas-btn').addClass('offcanvas-btn-open');
+//     $('.offcanvas-aside').addClass('offcanvas-aside-open');
+
+//     document.querySelector(".offcanvas-aside").style.width = '70vm';
+//     // document.getElementById(".contact").style.marginLeft = "250px";
+// }
+
+// /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+// function closeNav() {
+//     console.log('open');
+//     $('.offcanvas-btn').removeClass('offcanvas-btn-open');
+//     $('.offcanvas-aside').removeClass('offcanvas-aside-open');
+
+//     document.querySelector("mySidenav").style.width = '30vm';
+
+//     // document.getElementById("main").style.marginLeft = "0";
+// } 
