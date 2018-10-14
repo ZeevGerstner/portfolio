@@ -175,10 +175,11 @@ body {
         padding: 12px 0;
     }
 }
-header.masthead {
+header.masthead {    
+
     text-align: center;
-    color: black;
-    background-image: url("../img/header.jpg");
+    color: rgb(233, 207, 61);
+    background-image: url("../img/Neurons.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -203,7 +204,7 @@ header.masthead .intro-text .intro-heading {
     font-weight: 700;
     line-height: 50px;
     margin-bottom: 25px;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Indie Flower', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
 @media (min-width: 768px) {
@@ -219,11 +220,11 @@ header.masthead .intro-text .intro-heading {
         font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     header.masthead .intro-text .intro-heading {
-        font-size: 75px;
+        font-size: 100px;
         font-weight: 700;
         line-height: 75px;
         margin-bottom: 50px;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: 'Indie Flower', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         text-transform: uppercase;
     }
 }
