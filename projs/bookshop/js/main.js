@@ -3,6 +3,8 @@ console.log('main');
 
 function init() {
     createBooks();
+    var lang = getFromStorage('lang');
+    setLang(lang);
     renderBooks();
 }
 
@@ -10,25 +12,31 @@ function renderBooks() {
     var books = getBooks();
     var strHtml = books.map(function (book) {
         return strHtml = `<tr>
-                        <th scope="row">${book.id}</th>
-                        <td><img src="${book.imgUrl}" height="50px" width="30px"/></td>
+                        <td scope="row">${book.id}</td>
+                        <td><img src="${book.imgUrl}"\/></td>
                         <td>${book.title}</td>
                         <td class="price">${book.price}$</td>
                         <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detailesModal" onclick="onReadClicke('${book.id}')">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" 
+                        data-target="#detailesModal" onclick="onReadClicke('${book.id}')" data-trans="btnRead">
                         Read</button>
-                            <button type="button" class="btn btn-secondary" onclick = "onUpdateBook(this,'${book.price}','${book.id}')" >Update</button>
-                            <button type="button" class="btn btn-danger" onclick = "onDeleteBook('${book.id}')">Delete</button>
+                            <button type="button" class="btn btn-secondary" onclick = "onUpdateBook(this,'${book.price}','${book.id}')" 
+                            data-trans="btnUpdate">Update</button>
+                            <button type="button" class="btn btn-danger" onclick = "onDeleteBook('${book.id}')" data-trans="btnDelete">Delete</button>
                         </td>
                     </tr>`
     })
 
     $('.books-list').html(strHtml.join(''))
+    doTrans();
+
 }
 
 
 
 function onDeleteBook(bookId) {
+    var isConfirm = confirm('Are yoy sure?');
+    if (!isconfirm) return;
     deleteBook(bookId);
     renderBooks();
 }
@@ -45,20 +53,25 @@ function readAndAddNewBook() {
 
 function onUpdateBook(elTd, bookPrice, bookId) {
     var el = elTd.parentElement.parentElement.children[3];
-    el.innerHTML = `<input value = "${bookPrice}" id ="${bookId}"></input><button onclick = "saveUpdate('${bookId}')">save</button>`;
+    el.innerHTML = `<input value = "${bookPrice}" id ="${bookId}"></input>
+                                <button onclick = "saveUpdate('${bookId}')" data-trans="btnSave">save</button>`;
+    doTrans();
+
 }
 
 function onReadClicke(bookId) {
     var books = getBooks();
     var book = getItembyId(books, bookId);
+
     $('.detailes-modal  ').html(`
                                          <img class="modal-img" src = "${book.imgUrl}"/>
-                                         <h2>Title :  <br >${book.title}</h2>
-                                         <h3>Price : ${book.price}</h3>
-                                         <h4 class="book-id" id="${book.id}">Book ID : ${book.id}</h4>
-                                         <h4>Rate: ${book.rate}</h4>`
+                                         <h2>${book.title}</h2>
+                                         <h3><span  data-trans="price">Price </span>: ${book.price}$</h3>
+                                         <h4 class="book-id" id="${book.id}"><span data-trans="id">Book ID</span> : ${book.id}</h4>
+                                         <h4><span data-trans="bookRate">Rate</span>: ${book.rate}</h4>`
     )
     $('.rate').text(`${book.rate}`)
+    doTrans()
 }
 
 function onUpdateRate(val) {
@@ -69,19 +82,25 @@ function onUpdateRate(val) {
     saveUpdateRate($rate, $bookId);
 }
 
-function onClickFilter(el) {
-    var filter = el.innerText;
+function onClickFilter(filter) {
     sortBy(filter);
     renderBooks();
 }
 
 
 function onNextPage() {
-    goNextPage()
+    goNextPage();
     renderBooks();
+    setLang(gCurrLang)
 }
 
 function onPrevPage() {
-    goPrevPage()
+    goPrevPage();
+    renderBooks();
+    setLang(gCurrLang)
+}
+function onSetLang(lang) {
+    console.log(lang);
+    setLang(lang);
     renderBooks();
 }

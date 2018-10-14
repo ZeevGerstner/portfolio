@@ -1,3 +1,17 @@
+body {
+    background-image: url('../img/books.jpg')
+
+}
+
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+[data-role = 'btnClose'] {
+    float: left;
+}
+
 img {
     height: 50px;
     width: 50px;
@@ -7,4 +21,34 @@ img {
     float: right;
     height: 300px;
     width: 250px;
+}
+
+.sort {
+    cursor: pointer;
+}
+
+.sort:hover{
+    font-style: italic;
+    background-color: steelblue;
+}
+.addBookForm.rtl {
+    text-align: right;
+}
+
+.modal-header .close{
+    margin: -1rem -1rem;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+
+th {
+    background-color: chocolate;
+}
+
+.table .table-striped {
+    text-align: center;
+    font-weight: bold;
 }
