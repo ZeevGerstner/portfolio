@@ -26,6 +26,8 @@ function createProjs() {
         createProj('pacman', 'Pacman', 'My pacman', 'An awsome pacman!', 'pacman.png', 'pacman2.png'),
         createProj('todoMVC', 'Todo', 'todo list', 'A simple todo app', 'todo.jpeg', 'todo2.png'),
         createProj('touch-nums', 'Touch the nums', 'Touch the nums game', 'A simple Touch the nums game', 'touchthenums.png', 'touchthenums.png'),
+        createProj('guesswho', 'Guess Who', 'Guess who game', 'A smart Guess who game', 'guesswho.jpeg', 'guesswho.png'),
+
     ]
 
 }
