@@ -9,29 +9,31 @@ var gSize;
 // var gBoard;
 var time;
 var startStoper;
-var bestTime =  100;
+var bestTime = 100;
 
 function init(size) {
     gSize = size;
     // bestTime = localStorage.getItem(`best time level ${size}`, time);
+    clearInterval(startStoper);
     createBoard(size);
     document.querySelector('.start').innerHTML = `<h2 class="time">0</h2>`;
     document.querySelector('.start').innerHTML += `<h2 class="next-num">Find num: 1</h2>`;
 }
 
-function showBestTime(size,time){
+function showBestTime(size, time) {
     size = Math.sqrt(gSize);
-    if(bestTime === 100){
+    if (bestTime === 100) {
         bestTime = localStorage.setItem(`best time level ${size}`, time);
-        document.querySelector('.best-time').innerText = `Level ${size} best time : ${time}`    
+        document.querySelector('.best-time').innerText = `Level ${size} best time : ${time}`
+
     }
-    if(time < bestTime){
+    if (time < bestTime) {
         bestTime = localStorage.setItem(`best time level ${size}`, time);
         document.querySelector('.best-time').innerText = `Level ${size} best time : ${time}`
     }
     bestTime = localStorage.getItem(`best time level ${size}`, time);
     console.log('best time');
-    
+
 }
 
 
@@ -44,14 +46,14 @@ function stoper() {
 }
 
 function checkClick(elNum) {
-    
-    if (+elNum.innerText === (gNumCount+1)) {
+
+    if (+elNum.innerText === (gNumCount + 1)) {
         if (gNumCount === 0) {
             stoper();
         }
         elNum.style.backgroundColor = "greenyellow";
         gNumCount++;
-        document.querySelector('.next-num').innerText = `Find num : ${gNumCount+1}`;
+        document.querySelector('.next-num').innerText = `Find num : ${gNumCount + 1}`;
         checkVictory();
     }
 }
@@ -60,9 +62,9 @@ function checkVictory() {
     console.log(gNumCount);
     if (gNumCount === gSize) {
         clearInterval(startStoper);
-        showBestTime(gSize,time);
+        showBestTime(gSize, time);
         document.querySelector('.next-num').innerHTML =
-        `<button class="restart"
+            `<button class="restart"
         onclick="init(${Math.sqrt(gSize)})">
         Play again</button>`;
         console.log('victory');

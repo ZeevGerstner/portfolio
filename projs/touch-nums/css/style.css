@@ -24,7 +24,6 @@
 
 .next-num {
     background-color: aqua;
-    width: 160px; 
     padding: 15px;
     border: 0;
     text-align: center;
@@ -43,15 +42,12 @@ table {
     transition: .5s;
     cursor: pointer;
     font-size: 50px;
-    height: 400px;
-    width: 400px;
-    /* margin-top: 10px; */
+    height: 500px;
+    width: 500px;
     margin-left: 50px; 
 }
 
 td,tr {
-    /* height: 80px;
-    width: 80px; */
     border: 2px solid salmon;
     text-align: center;
     transition: .5s;
@@ -61,7 +57,6 @@ td,tr {
 td:hover {
     background-color: crimson;
     color: cornflowerblue;
-    font-weight: bold;    
 }
 
 .difficulties {
@@ -80,9 +75,7 @@ td:hover {
     cursor: pointer;
 }
 .difficulties button:hover {
-    /* transition: .3s; */
     font-style: italic;
-    font-weight: bold;    
 }
 
  .easy { 
