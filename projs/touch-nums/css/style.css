@@ -54,10 +54,10 @@ td,tr {
     cursor: pointer;
 }
 
-td:hover {
+/* td:hover {
     background-color: crimson;
     color: cornflowerblue;
-}
+} */
 
 .difficulties {
     display: inline;
